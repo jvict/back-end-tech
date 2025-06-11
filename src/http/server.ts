@@ -48,7 +48,7 @@ app.get('/evolution', {
           CASE WHEN count(*) = 0 THEN 0
             ELSE sum(CASE WHEN response_status_id = 1 THEN 1 ELSE 0 END)::decimal / count(*) * 100 END
           ,2) as conversion_rate
-      FROM inside.users_surveys_responses_aux
+      FROM users_surveys_responses_aux
       ${whereClause}
       GROUP BY origin, day
       ORDER BY day ASC, origin ASC
