@@ -7,5 +7,5 @@ if(!process.env.DATABASE_URL){
 
 const client = new Client({ connectionString: process.env.DATABASE_URL });
 await client.connect();
-export const db = drizzle(client);     // Para ORM tipado (se/quando quiser)
-export { client };                    // Para SQL cru/casos especiais
+export const db = drizzle(client);     // ORM tipado 
+export { client };                    //  SQL cru/casos especiais

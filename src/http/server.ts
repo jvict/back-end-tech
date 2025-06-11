@@ -16,9 +16,6 @@ app.get('/health', () => {
 
 app.register(fastifyCors, { origin: '*' });
 
-//escalonamente horizintal
-//deploy: blue-green deployment
-
 app.get('/evolution', {
     schema: {
         querystring: z.object({
