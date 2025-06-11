@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: ilumeo_db
+    restart: always
+    environment:
+      - POSTGRES_USER=ilumeo
+      - POSTGRES_PASSWORD=ilumeo
+      - POSTGRES_DB=ilumeo
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
